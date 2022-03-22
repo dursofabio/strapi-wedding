@@ -1,57 +1,83 @@
-# 🚀 Getting started with Strapi
+# Wedding WebSite
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+This repository contains the following:
 
-### `develop`
+- Strapi project with existing Content-types and data (`/api`)
+- Angular client ready to fetch the content of the Strapi application (`/client`)
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+## Get started
+
+You can get started with this project locally on your machine by following the instructions below or you can [request a private instance on our website](https://strapi.io/demo).
+
+## Prerequisites
+
+Be sure to have the correct env variables for each part:
+
+- Strapi (example in `./api/.env.example`):
+  - `STRAPI_ADMIN_CLIENT_URL=<url-of-nextjs>`
+  - `STRAPI_ADMIN_CLIENT_PREVIEW_SECRET=<a-random-token>`
+
+- Angular (already in `./client/.env.development`):
+  - `NG_PUBLIC_API_URL=<url-of-strapi>`
+  - `PREVIEW_SECRET=<the-same-random-token-as-for-strapi>`
+
+## 1. Clone Wedding
+
+- Clone the repository by running the following command:
 
 ```
-npm run develop
-# or
-yarn develop
+git clone https://github.com/strapi/wedding.git
 ```
 
-### `start`
+- Navigate to your project folder by running `cd wedding`.
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+## 2. Start Strapi
 
-```
-npm run start
-# or
-yarn start
-```
+Navigate to your `./my-projects/wedding/api` folder by running `cd api` from your command line.
 
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
+- Run the following command in your `./wedding/api` folder:
 
 ```
-npm run build
-# or
-yarn build
+yarn && yarn seed && yarn develop
 ```
 
-## ⚙️ Deployment
+This will install the dependencies, fill your application with data and run your server. You can run these commands separately.
 
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
+## 3. Start Angular
 
-## 📚 Learn more
+Navigate to your `./my-projects/wedding/client` folder by running `cd client` from your command line.
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+- Run the following command in your `./wedding/client` folder
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+```
+yarn && yarn dev
+```
 
-## ✨ Community
+This will install the dependencies, and run your server. You can run these commands separately.
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+## Features overview
 
----
+### User
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+<br />
+
+**An intuitive, minimal editor** The editor allows you to pull in dynamic blocks of content. It’s 100% open-source, and it’s fully extensible.<br />
+**Media Library** Upload images, video or any files and crop and optimize their sizes, without quality loss.<br />
+**Flexible content management** Build any type of category, section, format or flow to adapt to your needs. <br />
+**Sort and Filter** Built-in sorting and filtering: you can manage thousands of entries without effort.<br />
+**User-friendly interface** The most user-friendly open-source interface on the market.<br />
+**SEO optimized** Easily manage your SEO metadata with a repeatable field and use our Media Library to add captions, notes, and custom filenames to optimize the SEO of media assets.<br /><br />
+
+### Global
+
+<br />
+
+[Customizable API](https://strapi.io/features/customizable-api): Automatically build out the schema, models, controllers for your API from the editor. Get REST or GraphQL API out of the box without writing a single line of code.<br />
+[Media Library](https://strapi.io/features/media-library): The media library allows you to store your images, videos and files in your Strapi admin panel with many ways to visualize and manage them.<br />
+[Role-Based Access Control (RBAC)](https://strapi.io/features/custom-roles-and-permissions): Role-Based Access Control is a feature available in the Administration Panel settings that let your team members have access rights only to the information they need.<br />
+[Internationalization (i18n)](https://strapi.io/features/internationalization): Internationalization (i18n) lets you create many content versions, also called locales, in different languages and for different countries.<br />
+
+
+## Resources
+
+[Docs](https://docs.strapi.io) • [Demo](https://strapi.io/demo) • [Starters](https://strapi.io/starters) • [Forum](https://forum.strapi.io/) • [Discord](https://discord.strapi.io) • [Youtube](https://www.youtube.com/c/Strapi/featured) • [Try Enterprise Edition](https://strapi.io/enterprise) • [Strapi Design System](https://design-system.strapi.io/) • [Marketplace](https://market.strapi.io/)
